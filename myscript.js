@@ -24,17 +24,30 @@ document.getElementById('button').addEventListener('click',() => {
         if(levelDiff=="1"){
             for(let i=1; i<=100; i++){//numeri da 1 a 100
                 console.log(i)                
-                container.innerHTML += '<div class="box d-flex justify-content-center align-items-center">' + i +'</div>';  
+                container.innerHTML += '<div class="cell box d-flex justify-content-center align-items-center">' + i +'</div>';  
             }     
         }else if (levelDiff=="2"){
             for(let b=1; b<=81; b++){//numeri da 1 a 81
                 console.log(b)                
-                container.innerHTML += '<div class="bo d-flex justify-content-center align-items-center">' + b +'</div>';  
+                container.innerHTML += '<div class="cell bo d-flex justify-content-center align-items-center">' + b +'</div>';  
             }
         }else if (levelDiff=="3"){
             for(let c=1; c<=49; c++){//numeri da 1 a 49
                 console.log(c)                
-                container.innerHTML += '<div class="b d-flex justify-content-center align-items-center">' + c +' </div>';  
+                container.innerHTML += '<div class="cell b d-flex justify-content-center align-items-center">' + c +' </div>';  
             }
         }
+        let cell = document.getElementsByClassName('cell');//add background color
+        for(let index=0; index<cell.length; index++){
+            cell[index].addEventListener("click", function(){
+                messaggio = this.innerHTML
+                this.classList.add("blue")
+                this.classList.add("white")
+            })
+        }
+
+        
+        
 });
+
+
